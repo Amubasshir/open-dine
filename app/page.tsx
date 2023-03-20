@@ -21,6 +21,11 @@ export default function Home() {
           </div>
         </nav>
         {/* navbar */}
+        <main>
+          {/* header */}
+          <header></header>
+          {/* header */}
+        </main>
       </main>
     </main>
   );
