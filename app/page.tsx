@@ -44,6 +44,15 @@ export default function Home() {
             </div>
           </header>
           {/* header */}
+          {/* cards */}
+          <div>
+            {/* card */}
+            <div>
+              <img src="" alt="" />
+            </div>
+            {/* card */}
+          </div>
+          {/* cards */}
         </main>
       </main>
     </main>
