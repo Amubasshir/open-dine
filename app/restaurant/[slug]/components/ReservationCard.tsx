@@ -1,3 +1,5 @@
+'use client';
+
 const ReservationCard = () => {
   return (
     <div
