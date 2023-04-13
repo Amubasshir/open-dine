@@ -1,14 +1,10 @@
-import Navbar from '../components/Navbar';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
 import SearchSideBar from './components/SearchSideBar';
 
 export default function search() {
   return (
-    <main className="min-h-screen w-screen bg-gray-100">
-      <main className="m-auto max-w-screen-2xl bg-white">
-        <Navbar />
-      </main>
+    <>
       <div className="bg-gradient-t0-r from-[#of1f47] to-[#5f6984]">
         <header className="h-24 bg-gradient-to-r from-[#142b3f] to-[#192854] p-2">
           <Header />
@@ -20,7 +16,6 @@ export default function search() {
           </div>
         </header>
       </div>
-      {/* header */}
-    </main>
+    </>
   );
 }
