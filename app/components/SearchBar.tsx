@@ -19,8 +19,9 @@ const SearchBar = () => {
       <button
         className="rounded bg-red-600 px-8 py-2 font-medium text-white "
         onClick={() => {
-          if (location === 'banana') return;
-          router.push('/search');
+          if (location === '') return;
+          router.push(`/search?city=${location}`);
+          setLocation('');
         }}
       >
         Lets go

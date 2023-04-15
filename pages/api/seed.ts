@@ -88,7 +88,7 @@ export default async function handler(
         name: 'Coconut Lagoon',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/3/48545745.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'At Coconut Lagoon prepare yourselves for a most memorable journey through South Indian cuisine and feast on high quality food of inimitable flavour, aroma and originality in the vibrant setting of Coconut Lagoon.',
         images: [
@@ -126,7 +126,7 @@ export default async function handler(
         name: 'Adrak Yorkville',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/4/47914200.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'Namaste and welcome to Adrak - a place where food unites all. We take you through a journey of the past and present, as we hope to encourage thought-provoking conversations amid elevated Indian food.',
         images: [
@@ -181,7 +181,7 @@ export default async function handler(
         name: 'Pukka',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/1/25733300.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'At this refined, yet casual, Indian restaurant, the portions are large, the wine list is top-notch, and the ambience encourages sharing.',
         images: [
@@ -239,7 +239,7 @@ export default async function handler(
         name: 'La Bartola',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/2/48981502.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'At La Bartola, we inspire a passion for authentic Mexican flavours. We use simple, fresh, and high-quality local & Mexican ingredients to craft delicious and thoughtful food.',
         images: [
@@ -298,7 +298,7 @@ export default async function handler(
         name: 'Casa Madera',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/3/47744844.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'The first location in Canada, from famed restauranteurs Noble 33, welcomes patrons into an immersive dining experience.',
         images: [
@@ -374,7 +374,7 @@ export default async function handler(
         name: 'Blu Ristorante',
         main_image:
           'https://resizer.otstatic.com/v2/photos/wide-huge/2/47350167.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'Victorian Building with two floors of dining space and large side and front patio. Tastefully designed to host your special event, romantic dinner, corporate buyout or a celebration of any sort.',
         images: [
@@ -457,7 +457,7 @@ export default async function handler(
         name: 'Sofia',
         main_image:
           'https://resizer.otstatic.com/v2/photos/xlarge/1/25558850.jpg',
-        price: PRICE.EXPERSIVE,
+        price: PRICE.EXPENSIVE,
         description:
           'Tapping into true Italian tastes, the menu starts with a selection of antipasti including a citrus salad and grilled octopus, and a plentiful selection of crudo. ',
         images: [
