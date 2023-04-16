@@ -4,7 +4,7 @@ const ReservationCard = () => {
   return (
     <div
       className="
-          fixed w-[15%] p-3 shadow"
+          fixed z-50 w-[15%] p-3 shadow"
     >
       <div className="border-b pb-2 text-center font-bold ">
         <h4 className="mr-7 text-lg">Make a reservation</h4>

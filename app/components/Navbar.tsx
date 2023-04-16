@@ -1,22 +1,37 @@
-import Link from 'next/link';
+'use client';
 
-export default function Navbar() {
+import Link from 'next/link';
+import { useContext } from 'react';
+import useAuth from '../../hooks/useAuth';
+import { AuthenticationContext } from '../context/AuthContext';
+import AuthModal from './AuthModal';
+
+export default function NavBar() {
+  const { data, loading } = useContext(AuthenticationContext);
+  const { signout } = useAuth();
   return (
-    <nav className="flex items-center justify-between bg-white p-2">
-      <Link className=" text-2xl font-bold text-gray-700" href="">
-        <img
-          src="https://i.ibb.co/MGwCc2T/open-dine.png"
-          alt=""
-          className="w-26 h-16"
-        />
+    <nav className="flex justify-between bg-white p-2">
+      <Link href="/" className="text-2xl font-bold text-gray-700">
+        OpenTable{' '}
       </Link>
       <div>
-        <div className="flex">
-          <button className="mr-2 rounded border bg-[#247F9E] py-1 px-4 text-white">
-            Sign in
-          </button>
-          <button className="  rounded border-2 py-1 px-4">Sign up</button>
-        </div>
+        {loading ? null : (
+          <div className="flex">
+            {data ? (
+              <button
+                className="mr-3 rounded border bg-blue-400 p-1 px-4 text-white"
+                onClick={signout}
+              >
+                Sign out
+              </button>
+            ) : (
+              <>
+                <AuthModal isSignin={true} />
+                <AuthModal isSignin={false} />
+              </>
+            )}
+          </div>
+        )}
       </div>
     </nav>
   );
