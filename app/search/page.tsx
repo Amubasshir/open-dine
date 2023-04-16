@@ -1,11 +1,42 @@
-import { PrismaClient } from '@prisma/client';
+import { PRICE, PrismaClient } from '@prisma/client';
 import Header from './components/Header';
 import RestaurantCard from './components/RestaurantCard';
 import SearchSideBar from './components/SearchSideBar';
 
 const prisma = new PrismaClient();
 
-const fetchRestaurantByCity = (city: string | undefined) => {
+interface SearchParams {
+  city?: string;
+  cuisine?: string;
+  price?: PRICE;
+}
+
+const fetchRestaurantByCity = (searchParams: SearchParams) => {
+  const where: any = {};
+  if (searchParams.city) {
+    const location = {
+      name: {
+        equals: searchParams.city.toLowerCase(),
+      },
+    };
+    where.location = location;
+  }
+
+  if (searchParams.cuisine) {
+    const cuisine = {
+      name: {
+        equals: searchParams.cuisine.toLowerCase(),
+      },
+    };
+    where.cuisine = cuisine;
+  }
+  if (searchParams.price) {
+    const price = {
+      equals: searchParams.price,
+    };
+    where.price = price;
+  }
+
   const select = {
     id: true,
     name: true,
@@ -16,26 +47,29 @@ const fetchRestaurantByCity = (city: string | undefined) => {
     slug: true,
   };
 
-  if (!city) return prisma.restaurant.findMany({ select });
-
   return prisma.restaurant.findMany({
-    where: {
-      location: {
-        name: {
-          equals: city.toLowerCase(),
-        },
-      },
-    },
+    where,
     select,
   });
+};
+
+const fetchLocation = async () => {
+  return prisma.location.findMany();
+};
+
+const fetchCuisines = async () => {
+  return prisma.cuisine.findMany();
 };
 
 export default async function Search({
   searchParams,
 }: {
-  searchParams: { city: string };
+  searchParams: SearchParams;
 }) {
-  const restaurants = await fetchRestaurantByCity(searchParams.city);
+  const restaurants = await fetchRestaurantByCity(searchParams);
+
+  const location = await fetchLocation();
+  const cuisine = await fetchCuisines();
 
   return (
     <>
@@ -43,7 +77,11 @@ export default async function Search({
         <header className="h-24 bg-gradient-to-r from-[#142b3f] to-[#192854] p-2">
           <Header />
           <div className="m-a flex w-2/3 items-center justify-between py-4">
-            <SearchSideBar />
+            <SearchSideBar
+              locations={location}
+              cuisines={cuisine}
+              searchParams={searchParams}
+            />
             <div className=" w-5/6">
               {restaurants.length ? (
                 <>
